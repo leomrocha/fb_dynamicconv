@@ -7,7 +7,8 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-from fairseq import utils
+# from fairseq import utils  # TODO change dependency from fairseq to the copied here
+import utils
 from .unfold import unfold1d
 
 

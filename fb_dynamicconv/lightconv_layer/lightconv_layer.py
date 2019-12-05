@@ -9,7 +9,7 @@ from torch.autograd import Function
 import torch.nn.functional as F
 
 import lightconv_cuda
-from fairseq import utils
+from fb_dynamicconv import utils
 
 
 class lightconvFunction(Function):

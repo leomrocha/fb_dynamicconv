@@ -9,8 +9,8 @@ from torch.autograd import Function
 import torch.nn.functional as F
 
 import dynamicconv_cuda
-from fairseq import utils
-from fairseq.modules.unfold import unfold1d
+from fb_dynamicconv import utils
+from fb_dynamicconv.unfold import unfold1d
 
 
 class dynamicconvFunction(Function):

@@ -17,7 +17,7 @@ def DynamicConv(input_size, kernel_size=1, padding_l=None, num_heads=1,
                 query_size=None, in_proj=False):
     if torch.cuda.is_available():
         try:
-            from fairseq.modules.dynamicconv_layer import DynamicconvLayer
+            from .dynamicconv_layer import DynamicconvLayer
             return DynamicconvLayer(input_size, kernel_size=kernel_size,
                                     padding_l=padding_l, num_heads=num_heads,
                                     weight_dropout=weight_dropout,

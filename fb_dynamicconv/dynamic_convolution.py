@@ -8,7 +8,8 @@ import torch.nn as nn
 import torch.nn.functional as F
 
 # from fairseq import utils  # TODO change dependency from fairseq to the copied here
-import utils
+# import utils
+from .utils import get_incremental_state, set_incremental_state
 from .unfold import unfold1d
 
 
@@ -224,10 +225,10 @@ class DynamicConv1dTBC(nn.Module):
             self._set_input_buffer(incremental_state, input_buffer)
 
     def _get_input_buffer(self, incremental_state):
-        return utils.get_incremental_state(self, incremental_state, 'input_buffer')
+        return get_incremental_state(self, incremental_state, 'input_buffer')
 
     def _set_input_buffer(self, incremental_state, new_buffer):
-        return utils.set_incremental_state(self, incremental_state, 'input_buffer', new_buffer)
+        return set_incremental_state(self, incremental_state, 'input_buffer', new_buffer)
 
     def extra_repr(self):
         s = '{}, kernel_size={}, padding_l={}, num_heads={}, weight_softmax={}, conv_bias={}, renorm_padding={}, in_proj={}'.format(
